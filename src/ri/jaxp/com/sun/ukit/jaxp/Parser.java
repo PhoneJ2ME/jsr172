@@ -1,5 +1,4 @@
 /*
- *  
  *
  * Copyright  1990-2006 Sun Microsystems, Inc. All Rights Reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER
@@ -1362,7 +1361,7 @@ public final class Parser
 					break;
 
 				case '<':
-					// Need revisit: With additional info from DTD and xml:space attr [#2.10]
+					// BUG:	With additional info from DTD and xml:space attr [#2.10]
 					// the following call can be supported:
 					// mHand.ignorableWhitespace(mBuff, 0, (mBuffIdx + 1));
 					bflash();
@@ -2212,7 +2211,7 @@ public final class Parser
 					if (flag != '-')
 						bappend(' ');	// tail space
 					push(new Input(BUFFSIZE_READER));
-					// Need revisit: there is no leading space! [#4.4.8]
+					// BUG: there is no leading space! [#4.4.8]
 					setinp(is);
 					mInp.pubid = inp.pubid;
 					mInp.sysid = inp.sysid;
